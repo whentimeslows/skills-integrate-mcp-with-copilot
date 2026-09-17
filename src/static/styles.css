@@ -16,12 +16,32 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+#auth-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#teacher-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#teacher-status button {
+  background-color: #3949ab;
+  padding: 8px 12px;
 }
 
 header h1 {
@@ -192,9 +212,56 @@ button:hover {
   display: none;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 2px 8px;
+  background: transparent;
+  color: #333;
+  font-size: 24px;
+}
+
+.close-button:hover {
+  background-color: #eee;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 600px) {
+  header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #auth-controls,
+  #teacher-status {
+    justify-content: center;
+  }
 }
